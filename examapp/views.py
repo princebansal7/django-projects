@@ -12,5 +12,6 @@ def testpaper(req):
 
 
 def mcq(req):
-    res = "<h1>This is mcq view</h1>"
+    template = loader.get_template("mcq.html")
+    res = template.render()
     return HttpResponse(res)
