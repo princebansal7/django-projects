@@ -13,13 +13,13 @@ def testpaper(req):
 
 def mcq(req):
     # assume we got below data from database
-    context = {
-        "question": "Best Character?",
-        "a": "Tom",
-        "b": "Tanjiro",
-        "c": "Mina",
-        "d": "Mikasa",
-    }
+    question = "Best Character?"
+    a = "Tom"
+    b = "Tanjiro"
+    c = "Mina"
+    d = "Mikasa"
+    options = [a, c, b, d]
+    context = {"question": question, "options": options}
 
     template = loader.get_template("mcq.html")
     res = template.render(context, req)
